@@ -1,0 +1,21 @@
+<div class="home-component">
+    <div class="search-box">
+            <label>
+                serach by Brand name here
+              <input type="text" [(ngModel)]="brandname"  autocomplete="off" placeholder="Search you beer here!">
+            </label>
+    </div>
+    
+    <div class="beer-card-container">
+        <div class='beer-card' 
+        *ngFor="let data of beerData |filter: brandname | paginate: { itemsPerPage: 20, currentPage: p }; let i = index; ">
+            <img [src]="imageData[ i > 4 ?  i %  imageData.length : i].image" alt="">
+            <div *ngFor="let schema of beerSchema">
+                <span>{{ schema?.name }}</span> : <span> {{ data[schema?.keyname] }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="pegination-footer">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>

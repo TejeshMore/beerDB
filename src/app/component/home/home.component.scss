@@ -1,0 +1,46 @@
+.home-component {
+    width: 100%;
+    height: 100%;
+    .search-box {
+        height: 3rem;
+    }
+    .beer-card-container {
+        height: calc(100% - 3rem - 50px);
+        width: 100%;
+        background-color: red;
+        overflow: hidden;
+        overflow-y: auto;
+        overflow-x: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        img {
+            width: 3rem;
+            height: 3rem;
+        }
+        .beer-card {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: green;
+            margin: 1rem;
+            width: 20%;
+            min-width: 15rem;
+            text-align: right;
+            
+        }
+    }
+    .pegination-footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgb(131, 131, 131);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
